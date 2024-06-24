@@ -1,0 +1,10 @@
+Este programa recibe los parametros para formar dos parabolas.
+Usted debe definir:
+
+-Los parámetros a, b y c de una función f(x)= ax^2 + bx + c.
+-Los parámetros d, e y h de una función g(x)= dx^2 + ex + h.
+-Un porcentaje de error máximo entre las imágenes de las funciones
+
+El programa va a calcular el intervalo donde la diferencia entre ambas funciones es menor a un error E que usted va a definir.
+Finalmente, se va a mostrar una gráfica donde se observe las funciones cuadráticas y los intervalos.
+
