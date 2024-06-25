@@ -1,7 +1,6 @@
-int jugador1 (){ /*este jugador siempre va a tener la O*/
+#include <stdio.h>
 
-}
 
-int jugador2 (){ /*Este jugador siempre va a tener la X*/
-    
-}
+
+
+int jugador1()
