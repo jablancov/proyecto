@@ -10,26 +10,18 @@ Gtkbuilder = *builder;
 Tresenraya = *tresenraya;
 Gerror = *err=null;
 
-typedef struct{
-ventanacasillasvacias = *ventanacasillasvacias;
-boton1vacio = *casilla1
-boton2vacio = *casilla2
-boton3vacio = *casilla3
-boton4vacio = *casilla4
-boton5vacio = *casilla5
-boton6vacio = *casilla6
-boton7vacio = *casilla7
-boton8vacio = *casilla8
-boton9vacio = *casilla9
+typedef struct ventanaprincipal{
+ventanaprincipal= *ventanaprincipal;
+boton1 = *casilla1;
+boton2 = *casilla2;
+boton3 = *casilla3;
+boton4 = *casilla4;
+boton5 = *casilla5;
+boton6 = *casilla6;
+boton7 = *casilla7;
+boton8 = *casilla8;
+boton9 = *casilla9;
 }
-int jugador1 (){ /*este jugador siempre va a tener la O*/
-
-}
-
-int jugador2 (){ /*Este jugador siempre va a tener la X*/
-    
-}
-
 void main(){
     bool
     do{
