@@ -74,7 +74,7 @@ int generate_data(cuad_func *fx, cuad_func *gx, float x_min, float x_max, const 
         return -1;
     }
     
-    fprintf(data_file, "x,f(x),g(x)\n"); // Header of the file 
+    fprintf(data_file, "#x f(x) g(x)\n"); // Header del archivo, para saber el orden 
 
     x = x_min;
     while (x < x_max)
@@ -82,7 +82,7 @@ int generate_data(cuad_func *fx, cuad_func *gx, float x_min, float x_max, const 
         calculate_y(fx, x);
         calculate_y(gx, x);
         
-        fprintf(data_file, "%.2f,%.2f,%.2f\n", x, fx->y, gx->y);
+        fprintf(data_file, "%.1f %.1f %.1f\n", x, fx->y, gx->y);
 
         x += step;
     }
@@ -93,6 +93,31 @@ int generate_data(cuad_func *fx, cuad_func *gx, float x_min, float x_max, const 
 }
 
 
+void create_gnuplot_script(const char *script_name, const char *data_file, cuad_func *fx, cuad_func *gx, interval interval) {
+    /* Crea el script para poder elaborar una grafica adecuada en gnuplot.*/
+
+    //Variables
+    FILE *script = fopen(script_name, "w");
+    char fx_legend[30];
+    char gx_legend[30];
+
+    // Definir leyendas
+    sprintf(fx_legend, "f(x) = %.1fx^2 + %.1fx + %.1f", fx->a, fx->b, fx->c);
+    sprintf(gx_legend, "g(x) = %.1fx^2 + %.1fx + %.1f", gx->a, gx->b, gx->c);
+
+    // Setup basico
+    fprintf(script, "set xlabel 'x'\nset ylabel 'y'\nset xtics nomirror\nset ytics nomirror\n");
+
+    // Plotear datos
+    fprintf(script, "plot '%s' using 1:2 with lines title \"%s\", ", data_file, fx_legend);
+    fprintf(script, "'%s' using 1:3 with lines title \"%s\"\n", data_file, gx_legend);
+
+    // Hace una pausa indefinida para que la ventana con la grafica se mantenga hasta que se cierre manualmente
+    fprintf(script, "pause -1");
+
+    fclose(script);
+
+}
 
 void print_instrucciones(const char *filename) {
     /* 

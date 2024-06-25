@@ -1,1 +1,4 @@
 .vscode/
+*.dat
+*.o
+*.gp
