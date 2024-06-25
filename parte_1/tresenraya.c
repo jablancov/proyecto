@@ -1,7 +1,10 @@
+/*Proyecto final Carlos Nuñez c25586 y Jorge Blanco*/
+
 #include <stido.h>
+#include <stbool.h>
 #include <gtk/gtk.h>
 #define FLIEGLADE "tres-en-raya.glade"
-int turnosmaximos = 9;
+int turnosmaximos = 0; /*Se declara la cantidad de turnos maximos/*
 Gtkbuilder = *builder;
 Tresenraya = *tresenraya;
 Gerror = *err=null;
@@ -17,18 +20,18 @@ boton6vacio = *casilla6
 boton7vacio = *casilla7
 boton8vacio = *casilla8
 boton9vacio = *casilla9
+}
+int jugador1 (){ /*este jugador siempre va a tener la O*/
 
 }
-int jugador1 (){
 
-}
-
-int jugador2 (){
+int jugador2 (){ /*Este jugador siempre va a tener la X*/
     
 }
 
 void main(){
-    gtk
+    bool
     do{
-    } while (turnosmaximos <= 9);
+        turnomaximos = turnomaximo +1 
+    } while (turnosmaximos < 9); /*Esto debido a que la cantidad de maximos turnos es 9.*/
     }
