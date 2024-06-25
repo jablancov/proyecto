@@ -1,8 +1,6 @@
-#include <stdio.h>
-
-
+/*Estructuras y declaracion de int jugadores.*/
 typedef struct ventanaprincipal{
-ventanaprincipal= *ventanaprincipal;
+ventanaprincipalabierta = *ventanaprincipal;
 boton1 = *casilla1;
 boton2 = *casilla2;
 boton3 = *casilla3;
@@ -14,5 +12,5 @@ boton8 = *casilla8;
 boton9 = *casilla9;
 }
 
-int jugador1()
-int jugador2()
+int jugador1();
+int jugador2();
