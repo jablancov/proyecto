@@ -59,11 +59,37 @@ void calculate_y(cuad_func *func, float x) {
 
 
 
-int generate_data(cuad_func fx, cuad_func gx, float x_min, float x_max) {
-/*
-Por definir
-*/
-float x;
+int generate_data(cuad_func *fx, cuad_func *gx, float x_min, float x_max, const char *filename) {
+    /*
+    Recibe las funciones fx, gx y calcula los valores de x, y desde x_min hasta x_max
+
+    */
+
+    FILE *data_file = fopen(filename, "w");
+    float step = 0.1;
+    float x;
+
+    if (data_file == NULL) {
+        perror("Error al abrir/crear el archivo de datos para los puntos");
+        return -1;
+    }
+    
+    fprintf(data_file, "x,f(x),g(x)\n"); // Header of the file 
+
+    x = x_min;
+    while (x < x_max)
+    {
+        calculate_y(fx, x);
+        calculate_y(gx, x);
+        
+        fprintf(data_file, "%.2f,%.2f,%.2f\n", x, fx->y, gx->y);
+
+        x += step;
+    }
+
+    fclose(data_file);
+    return 0;
+
 }
 
 
