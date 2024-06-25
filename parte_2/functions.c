@@ -15,29 +15,29 @@ int ask_func_params(cuad_func *fx, cuad_func *gx) {
     Guarda los parametros en los structs de dos funciones cuadraticas, f(x) y g(x)*/
 
     printf("Defina el valor de a (float): ");
-    scanf("%f", fx->a);
+    scanf("%f", &(fx->a));
     clean_buffer();
 
     printf("Defina el valor de b (float): ");
-    scanf("%f", fx->b);
+    scanf("%f", &(fx->b));
     clean_buffer();
 
     printf("Defina el valor de c (float): ");
-    scanf("%f", fx->c);
+    scanf("%f", &(fx->c));
     clean_buffer();
 
     printf("Ahora, para la función g(x):\n");
 
     printf("Defina el valor de d (float): ");
-    scanf("%f", gx->a);
+    scanf("%f", &(gx->a));
     clean_buffer();
 
     printf("Defina el valor de e (float): ");
-    scanf("%f", gx->b);
+    scanf("%f", &(gx->b));
     clean_buffer();
 
     printf("Defina el valor de h (float): ");
-    scanf("%f", gx->c);
+    scanf("%f", &(gx->c));
     clean_buffer();
     
     return 0;
@@ -51,16 +51,19 @@ void clean_buffer() {
 }
 
 
-void calculate_y(cuad_func *func) {
-    func->y = func->a * func->x * func->x + func->b * func->x + func->c;
+void calculate_y(cuad_func *func, float x) {
+    /*Calcula y almacena la preimagen y la imagen de la funcion
+     */
+    func->y = func->a * x * x + func->b * x + func->c;
 }
+
 
 
 int generate_data(cuad_func fx, cuad_func gx, float x_min, float x_max) {
 /*
 Por definir
 */
-
+float x;
 }
 
 

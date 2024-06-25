@@ -10,9 +10,10 @@ int main() {
     print_instrucciones(instructions_filename);
     ask_func_params(&fx, &gx);
 
-    fx.x = 1.5;
-    gx.x = 2;
+    calculate_y(&fx, 1.5);
+    calculate_y(&gx, 1.5);
 
-    printf("f(1.5) = %f.2", fx.y);
+    printf("f(1.5) = %.2f\n", fx.y);
+    printf("g(1.5) = %.2f\n", gx.y);
     return 0;
 }
