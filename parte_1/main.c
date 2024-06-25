@@ -3,6 +3,7 @@
 #include <stido.h>
 #include <stbool.h>
 #include <gtk/gtk.h>
+#include <jugadores.h>
 #define FLIEGLADE "tres-en-raya.glade"
 int turnosmaximos = 0; /*Se declara la cantidad de turnos maximos*/
 Gtkbuilder = *builder;
