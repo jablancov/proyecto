@@ -4,7 +4,7 @@
 #include <stbool.h>
 #include <gtk/gtk.h>
 #define FLIEGLADE "tres-en-raya.glade"
-int turnosmaximos = 0; /*Se declara la cantidad de turnos maximos/*
+int turnosmaximos = 0; /*Se declara la cantidad de turnos maximos*/
 Gtkbuilder = *builder;
 Tresenraya = *tresenraya;
 Gerror = *err=null;
@@ -35,3 +35,4 @@ void main(){
         turnomaximos = turnomaximo +1 
     } while (turnosmaximos < 9); /*Esto debido a que la cantidad de maximos turnos es 9.*/
     }
+
