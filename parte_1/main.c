@@ -12,6 +12,7 @@ Tresenraya = *tresenraya;
 Gerror = *err=null;
 
 void main(){
+    ventananueva()
     bool
     do{
         turnomaximos = turnomaximo +1 
