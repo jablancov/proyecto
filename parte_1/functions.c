@@ -7,6 +7,7 @@
 int ventananueva {}[
     window = gtk_window_new (ventanaprincipal)
 ]
+
 int jugador1(){ /*este jugador va a jugar con O*/
 }
 
