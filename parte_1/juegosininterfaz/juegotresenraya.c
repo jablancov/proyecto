@@ -1,7 +1,10 @@
-#include <stdbool.h> 
-#include <stdio.h> 
-#include <stdlib.h> 
-#include <time.h> 
+/*Proyecto juego tictactoe sin interfaz en gtk*/
+/*Desarollado por Carlos Nuñez c25586 y Jorge Blanco*/
+#include <stdbool.h> /*Requerido para el bool*/ 
+#include <stdio.h>  /*REquerido para el print*/
+#include <stdlib.h>  /*Liberrias*/
+#include <time.h>  /*Para sacar tiempos*/
+/*Definicion de las macros*/
 #define computadora 1 
 #define humano 2 
 #define lado 3 
@@ -32,4 +35,19 @@ int evaluar(char tablallena[3][3]){
         }
      }
     }
-}
+    if (tablallena[0][0]= tablallena[1][1]&& tablallena[2][2]){
+        if (tablallena[0][0]=Jugador){
+            return 1;
+        }
+        if (tablallena[0][0]=Oponente){
+            return 2;
+        }
+    }
+    if (tablallena[0][2]= tablallena[1][1]&& tablallena[2][0]){
+        if (tablallena[0][2]=Jugador){/*Si el que gana es la O esta funcion retorna 1*/
+            return 1;
+        }
+        if (tablallena[0][2]=Oponente){ /*Si el que gana es la O esta funcion retorna 2*/
+            return 2;
+        }
+    }
