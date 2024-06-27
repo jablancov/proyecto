@@ -102,7 +102,7 @@ else{
          return mejoropcion;
 }    
 }
-struct Movimiento encontrarmejormovimiento(char tabladejuego[3][3]){
+struct Movimiento encontrarMovimiento(char board[3][3]) {
     struct Movimiento mejormovimiento
     mejormovimiento.fila = -1;
     mejormovimiento.columna = -1;
@@ -126,7 +126,7 @@ return mejormovimiento;
 }
 /*Funcion para enseñar la tabla de juego*/
 
-void enseñartabladejuego(char tabladejuego[][lado]){ 
+void ensenartabladejuego(char tabladejuego[][lado]){ 
     printf("\n\n"); 
     printf("\t\t\t %c | %c | %c \n", tabladejuego[0][0],  /*Imprime la primera fila*/
            tabladejuego[0][1], tabladejuego[0][2]); 
@@ -138,7 +138,7 @@ void enseñartabladejuego(char tabladejuego[][lado]){
            tabladejuego[2][1], tabladejuego[2][2]); /*Imprime la tercera fila*/
 } 
 
-void enseñarinstrucciones(){
+void ensenarinstrucciones(){
 printf("Bienvenido al juego de tres en raya o tambien conocido como juego del gato. \n");
 printf("Este juego fue desarollado para el proyecto de programacion para el curso de IE0117");
 }
@@ -181,15 +181,15 @@ int columnascruzadas (char tabladejuego[][lado]){
     }
 }
 int gameover(char tabladejuego[][lado]){
-     return (rowCrossed(board) || columnCrossed(board) 
-            || diagonalCrossed(board)); 
+     return (rowCrossed(tabladejuego) || columnCrossed(board) 
+            || diagonalCrossed(tabladejuego)); 
 }
 void playTicTacToe(int turno) 
 {
     char tabladejuego[lado][lado]; 
     int movimientos[lado * lado]; 
     initialise(tabladejuego, movimiento);  
-    enseñarinstrucciones(); 
+    ensenarinstrucciones(); 
   
     int movimiento4 = 0, x, y; 
   
@@ -214,16 +214,16 @@ void playTicTacToe(int turno)
             x = estemovimiento.fila; 
             y = estemovimiento.columna; 
   
-            board[x][y] = movimientocpu; 
-            printf("La computadora ha puesto  %c en la celda %d %d\n", 
+            tabladejuego[x][y] = movimientocpu; 
+            p}intf("La computadora ha puesto  %c en la celda %d %d\n", 
                    movimientocpu, x, y); 
             showBoard(board); 
             moveIndex++; 
             turn = humano; 
         } 
-        else if (whoseTurn == HUMAN) { 
+        else if (turno == humano { 
             int movimiento5; 
-            printf("Enter your move (1-9): "); 
+            printf("Ingrese su movimiento: "); 
             scanf("%d", &movimiento5); 
             if (move < 1 || move > 9) { 
                 printf("Entrada invalida favor ingresar un numero entre 1 y 9"); 
@@ -239,7 +239,7 @@ void playTicTacToe(int turno)
                     declareWinner(humano); 
                     return; 
                 } 
-                whoseTurn = COMPUTER; 
+                turno = computadora; 
             } 
             else { 
                 printf("La celda %d actualmente esta ocupada intente nuevamente.\n", 
@@ -248,7 +248,7 @@ void playTicTacToe(int turno)
         } 
     } 
   
-    // If the game has drawn 
+    /*Si hay un empate*/
     if (!gameOver(tabladejuego) && movimientoIndex == lado * lado) 
         printf("EL juego ha quedado en empate\n"); 
     else { 
@@ -259,7 +259,7 @@ void playTicTacToe(int turno)
             turno = humano; 
   
         // Declare the winner 
-        declareWinner(whoseTurn); 
+        declareWinner(turno); 
     } 
 } 
 int main() 
