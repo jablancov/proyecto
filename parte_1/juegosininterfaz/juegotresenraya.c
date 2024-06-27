@@ -5,8 +5,8 @@
 #include <stdlib.h>  /*Liberrias para el rand*/
 #include <time.h>  /*Para sacar tiempos*/
 /*Definicion de las macros*/
-#define computadora 1 
-#define humano 2 
+#define computadora 2
+#define humano 1
 #define lado 3 
 #define jugador1 'O' 
 #define movimientocpu 'X'
@@ -145,18 +145,48 @@ printf("Este juego fue desarollado para el proyecto de programacion para el curs
 
 void arrancarjuego(char tabladejuego[][lado];movimiento3[]){
     for (int columna = 0; columna < lado;movimiento3[]){
-    for (int fila = 0; fila < lado; fila++){
+    for (int fila= 0; fila < lado; fila++){
             tabladejuego[columna][fila] =" "
     }
-    for (int numero = 0; numero < SIDE * SIDE; i++) 
-        movimiento3[numero] = i; 
-}
+    for (int numero = 0; numero < lado * lado; i++){
+    movimiento3[numero] = i; 
+    }
+    }
 /*PAra randomizar los movimientos*/
-for (int columna = 0; columna < SIDE * SIDE; i++) { 
-        int randIndex = rand() % (SIDE * SIDE); 
-        int temp = moves[i]; 
-        moves[i] = moves[randIndex]; 
-        moves[randIndex] = temp; 
+for (int columna = 0; columna < lado * lado; columna++) { 
+        int randindex = rand() % (SIDE * SIDE); 
+        int temporal = movimiento3[i]; 
+        moves[i] = movimiento3[randIndex]; 
+        movimiento3[randIndex] = temporal; 
     } 
 } 
   
+  /*Funcion que dice quien gano el juego*/
+
+  void ganador(int turnoactual){
+    if (turnoactual == movimientocpu){
+        printf("La computadora gana el juego \n");
+    }
+    if (turnoactual == jugador1){
+        printf("El jugador  gana el juego \n");
+    }
+  }
+
+int columnascruzadas (char tabladejuego[][lado]){
+    for (int fila = 0;fila < lado,fila++){
+        if (tabladejuego[0][fila] == tabladejuego[1][fila] 
+            && tabladejuego[1][fila] == tabladejuego[2][fila] 
+            && tabladejuego[0][fila] != ' ') 
+            return 1; 
+    }
+}
+int gameover(char tabladejuego[][lado]){
+     return (rowCrossed(board) || columnCrossed(board) 
+            || diagonalCrossed(board)); 
+}
+/*Funcion main del juego*/
+int main() 
+{ /*Juega primero el humano y luego la cpu*/
+   Jugarjuegodelgato(humano);
+    return 0; 
+}
