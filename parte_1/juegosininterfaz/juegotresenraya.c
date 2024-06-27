@@ -184,7 +184,84 @@ int gameover(char tabladejuego[][lado]){
      return (rowCrossed(board) || columnCrossed(board) 
             || diagonalCrossed(board)); 
 }
-/*Funcion main del juego*/
+void playTicTacToe(int turno) 
+{
+    char tabladejuego[lado][lado]; 
+    int movimientos[lado * lado]; 
+    initialise(tabladejuego, movimiento);  
+    enseñarinstrucciones(); 
+  
+    int movimiento4 = 0, x, y; 
+  
+    // Keep playing until the game is over or it is a draw 
+    while (!gameOver(tabladejuego) && movimiento4 != lado * lado) { 
+        if (turn == computadora) { 
+            char tabladejuegotemporal[3][3]; 
+            for (int i = 0; i < 3; i++) { 
+                for (int j = 0; j < 3; j++) { 
+                    if (tabladejuego[i][j] == 'X') { 
+                        tabladejuegotemporal[i][j] = 'x'; 
+                    } 
+                    else if (tabladejuego[i][j] == 'O') { 
+                        tabladejuegotemporal[i][j] = 'o'; 
+                    } 
+                    else { 
+                        tabladejuegotemporal[i][j] = '_'; 
+                    } 
+                } 
+            } 
+            struct Move estemovimiento = encontrarmejormovimiento(tablatemporal); 
+            x = estemovimiento.fila; 
+            y = estemovimiento.columna; 
+  
+            board[x][y] = movimientocpu; 
+            printf("La computadora ha puesto  %c en la celda %d %d\n", 
+                   movimientocpu, x, y); 
+            showBoard(board); 
+            moveIndex++; 
+            turn = humano; 
+        } 
+        else if (whoseTurn == HUMAN) { 
+            int movimiento5; 
+            printf("Enter your move (1-9): "); 
+            scanf("%d", &movimiento5); 
+            if (move < 1 || move > 9) { 
+                printf("Entrada invalida favor ingresar un numero entre 1 y 9"); 
+                continue; 
+            } 
+            x = (movimiento5 - 1) / lado; 
+            y = (movimiento5 - 1) % lado; 
+            if (tabladejuego[x][y] == ' ') { 
+                tabladejuego[x][y] = jugador1; 
+                showBoard(tabladejueego); 
+                ind++; 
+                if (gameOver(tabladejuego)) { 
+                    declareWinner(humano); 
+                    return; 
+                } 
+                whoseTurn = COMPUTER; 
+            } 
+            else { 
+                printf("La celda %d actualmente esta ocupada intente nuevamente.\n", 
+                       move); 
+            } 
+        } 
+    } 
+  
+    // If the game has drawn 
+    if (!gameOver(tabladejuego) && movimientoIndex == lado * lado) 
+        printf("EL juego ha quedado en empate\n"); 
+    else { 
+        // Toggling the user to declare the actual winner 
+        if (turno == computadora) 
+            turno= humano; 
+        else if (turno == humano) 
+            turno = humano; 
+  
+        // Declare the winner 
+        declareWinner(whoseTurn); 
+    } 
+} 
 int main() 
 { /*Juega primero el humano y luego la cpu*/
    Jugarjuegodelgato(humano);
