@@ -1,3 +1,19 @@
+//Creado por Jorge Blanco
+/*
+Este programa genera dos funciones cuadráticas a partir del input del usuario:
+f(x)= ax^2 + bx + c.
+g(x)= dx^2 + ex + h
+
+Luego, el usuario tambien debe especificar un error porcentual entre ambas funciones E.
+Se va a encontrar as regiones en las que la diferencia entre las funciones sea menor a E, es decir:
+
+E > 100 * (f(x)-g(x))/(f(x))
+
+Finalmente, en una grafica se va a mostrar las funciones f(x), g(x) y se van a enmarcar las regiones
+cuya diferencia es menor a la especificada por el usuario.
+El programa automaticamente hace un zoom a estas regiones.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -35,8 +51,8 @@ int main() {
         }
         region_list[i]->x_min = 0.0;
         region_list[i]->x_max = 0.0;
-        region_list[i]->y_min = 0.0;
-        region_list[i]->y_max = 0.0;
+        region_list[i]->y_0 = 0.0;
+        region_list[i]->y_1 = 0.0;
     }
 
 
@@ -48,7 +64,7 @@ int main() {
     printf("Intervalos\n");
 
     for (int i = 0; i < 2; i++) {
-        printf("x_min: %.2f, x_max: %.2f, y_min: %.2f, y_max: %.2f\n", region_list[i]->x_min,region_list[i]->x_max,region_list[i]->y_min,region_list[i]->y_max);
+        printf("x_min: %.2f, x_max: %.2f, y_0: %.2f, y_1: %.2f\n", region_list[i]->x_min,region_list[i]->x_max,region_list[i]->y_0,region_list[i]->y_1);
         free(region_list[i]);
     }
 

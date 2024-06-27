@@ -1,14 +1,16 @@
-e// STRUCTS
+// STRUCTS
 
-
+/* Struct para definir una region de interes para visualizar en la grafica
+Funciona tambien para guardar los intervalos*/
 typedef struct region2d
 {
     float x_min;
     float x_max;
-    float y_min;
-    float y_max;
+    float y_0;
+    float y_1;
 }region2d;
 
+/* Struct para guardar los parametros de una funcion y calcular los puntos*/
 typedef struct cuad_func
 {
     float a;
@@ -20,8 +22,7 @@ typedef struct cuad_func
 }cuad_func;
 
 
-// FUNCTIONS
-
+// FUNCIONES
 
 float parabola(float a, float b, float c, float x);
 int ask_func_params(cuad_func *fx, cuad_func *gx, float *threshold_error);
