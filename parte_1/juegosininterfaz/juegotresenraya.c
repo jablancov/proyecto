@@ -21,12 +21,15 @@ bool movimientosrestantes(char tabladejuego[3][3]){
 }
 //Viendo si hay un ganador ya sea de jugador 1 o de la cpu//
 int evaluar(char tablallena[3][3]){ 
+    /*VIendo si hay ganador por filas*/
     for (int fila = 0;fila < 3;fila++){
-     if (tablallena[fila][0] == tablallena[fila][1]&&tablallena[fila][1] == tablallena[fila][2]){
+     if (tablallena[fila][0] == tablallena[fila][1]&&tablallena[fila][1] == tablallena[fila][2]){ /*Verifica que haya un ganador por fila si no no entra*/
         if (tablallena[fila][0]=Jugador){
-            return 1;
+            return 1; /*Si el que gana es la O esta funcion retorna 1*/
         }
-        if 
+        if (tablallena[fila][0]=Oponente){ /*Si el que gana es la X esta funcion retorna 2*/
+            return 2;
+        }
      }
     }
 }
