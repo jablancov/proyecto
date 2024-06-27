@@ -1,4 +1,4 @@
-// STRUCTS
+e// STRUCTS
 
 
 typedef struct interval

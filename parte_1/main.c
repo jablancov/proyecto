@@ -12,9 +12,13 @@ Tresenraya = *tresenraya;
 Gerror = *err=null;
 
 void main(){
+    matrizjuego[3][3]
     ventananueva()
+    int filas = 3
+    int columnas = 3
     bool
     do{
+        jugador1(&matrizjuego,int filas,int columnas)
         turnomaximos = turnomaximo +1 
     } while (turnosmaximos < 9); /*Esto debido a que la cantidad de maximos turnos es 9.*/
     }

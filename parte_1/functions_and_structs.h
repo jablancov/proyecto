@@ -12,12 +12,5 @@ boton7 = *casilla7;
 boton8 = *casilla8;
 boton9 = *casilla9;
 }
-typedef struct juegodelgato{}
-{
-    int basedeljuego[3][3];
-    int turno;
-};
-
-
-int jugador1();
-int jugador2();
+int jugador1(int (&matrizjuego)[3][3]);
+int jugador2(int (&matrizjuego)[3][3]);
