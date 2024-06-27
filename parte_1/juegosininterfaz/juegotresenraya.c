@@ -102,9 +102,9 @@ else{
          return mejoropcion;
 }    
 }
-struct Movimiento encontrarmejormovimiento(char tabladejuego[3][3])
+struct movimiento encontrarmejormovimiento( char tabladejuego[3][3])
 {
-    struct Movimiento mejormovimiento;
+    struct movimiento mejormovimiento;
     mejormovimiento.fila = -1;
     mejormovimiento.columna = -1;
     for (int i=0; i <3;i++){
@@ -234,7 +234,7 @@ void Jugarjuegodelgato(int turno)
                     } 
                 } 
             } 
-            struct Move estemovimiento = encontrarmejormovimiento(tablatemporal); 
+            struct movimiento estemovimiento = encontrarmejormovimiento(tablatemporal); 
             x = estemovimiento.fila; 
             y = estemovimiento.columna; 
   
@@ -242,7 +242,7 @@ void Jugarjuegodelgato(int turno)
             printf("La computadora ha puesto  %c en la celda %d %d\n", 
                    movimientocpu, x, y); 
             showBoard(board); 
-            moveIndex++; 
+            movimiento3++; 
             turn = humano; 
         } 
         else if (turno == humano { 
@@ -267,7 +267,7 @@ void Jugarjuegodelgato(int turno)
             } 
             else { 
                 printf("La celda %d actualmente esta ocupada intente nuevamente.\n", 
-                       movimiento3); 
+                       movimiento5); 
             } 
         } 
     } 
