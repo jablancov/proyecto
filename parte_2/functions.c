@@ -74,7 +74,7 @@ int generate_data(cuad_func *fx, cuad_func *gx, float x_min, float x_max, region
     */
 
     FILE *data_file = fopen(filename, "w"); // Archivo para escribir los datos
-    float step = 0.2;
+    float step = 0.1;
     float x;
     float x_prev;
     float err_diff;
