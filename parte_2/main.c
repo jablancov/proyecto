@@ -35,8 +35,8 @@ int main() {
         }
         region_list[i]->x_min = 0.0;
         region_list[i]->x_max = 0.0;
-        region_list[i]->y_min = 0.0;
-        region_list[i]->y_max = 0.0;
+        region_list[i]->y_0 = 0.0;
+        region_list[i]->y_1 = 0.0;
     }
 
 
@@ -48,7 +48,7 @@ int main() {
     printf("Intervalos\n");
 
     for (int i = 0; i < 2; i++) {
-        printf("x_min: %.2f, x_max: %.2f, y_min: %.2f, y_max: %.2f\n", region_list[i]->x_min,region_list[i]->x_max,region_list[i]->y_min,region_list[i]->y_max);
+        printf("x_min: %.2f, x_max: %.2f, y_0: %.2f, y_1: %.2f\n", region_list[i]->x_min,region_list[i]->x_max,region_list[i]->y_0,region_list[i]->y_1);
         free(region_list[i]);
     }
 

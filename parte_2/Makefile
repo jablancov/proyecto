@@ -2,11 +2,11 @@
 CC = gcc
 CFLAGS = -Wall
 LDFLAGS = -lm
-SRC = main.c functions.c
+SRCP1 = main.c functions.c
 
 # Targets
 all:
-	$(CC) $(CFLAGS) -o exe $(SRC) $(LDFLAGS)
+	$(CC) $(CFLAGS) -o exe $(SRCP1) $(LDFLAGS)
 
 clean:
 	rm -f *.gp *.dat exe
