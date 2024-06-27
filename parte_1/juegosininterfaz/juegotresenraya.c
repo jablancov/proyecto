@@ -19,9 +19,14 @@ bool movimientosrestantes(char tabladejuego[3][3]){
                 return true;
     return false;
 }
-
+//Viendo si hay un ganador ya sea de jugador 1 o de la cpu//
 int evaluar(char tablallena[3][3]){ 
     for (int fila = 0;fila < 3;fila++){
-     if (tablallena[fila][0] == tablallena[fila[0]])   
+     if (tablallena[fila][0] == tablallena[fila][1]&&tablallena[fila][1] == tablallena[fila][2]){
+        if (tablallena[fila][0]=Jugador){
+            return 1;
+        }
+        if 
+     }
     }
 }
