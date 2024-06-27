@@ -1,0 +1,31 @@
+# Proyecto del curso Programación bajo Plataformas Abiertas (IE0117)
+
+Este proyecto está dividido en dos partes
+
+## Parte 1
+
+
+
+## Parte 2
+
+Este programa genera dos funciones cuadráticas a partir del input del usuario:
+
+$$f(x)= ax^2 + bx + c$$
+$$g(x)= dx^2 + ex + h$$
+
+Luego, el usuario tambien debe especificar un error porcentual entre ambas funciones E.
+Se va a encontrar as regiones en las que la diferencia entre las funciones sea menor a E, es decir:
+
+$$E \geq 100 * \frac{f(x)-g(x)}{f(x)}$$
+
+Finalmente, en una grafica se va a mostrar las funciones f(x), g(x) y se van a enmarcar las regiones
+cuya diferencia es menor a la especificada por el usuario.
+
+El programa automaticamente hace un zoom a estas regiones.
+
+### Requerimientos
+
+El usuario debe tener instalado gcc y gnuplot. Que se puede realizar con los siguientes comandos en terminal
+
+- sudo apt install gcc
+- sudo apt install gnuplot

@@ -1,3 +1,19 @@
+//Creado por Jorge Blanco
+/*
+Este programa genera dos funciones cuadráticas a partir del input del usuario:
+f(x)= ax^2 + bx + c.
+g(x)= dx^2 + ex + h
+
+Luego, el usuario tambien debe especificar un error porcentual entre ambas funciones E.
+Se va a encontrar as regiones en las que la diferencia entre las funciones sea menor a E, es decir:
+
+E > 100 * (f(x)-g(x))/(f(x))
+
+Finalmente, en una grafica se va a mostrar las funciones f(x), g(x) y se van a enmarcar las regiones
+cuya diferencia es menor a la especificada por el usuario.
+El programa automaticamente hace un zoom a estas regiones.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
