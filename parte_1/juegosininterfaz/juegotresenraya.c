@@ -102,9 +102,15 @@ else{
          return mejoropcion;
 }    
 }
-struct encontrarmejormovimientoparajugador(char tabladejuego[3][3]);
-    struct encontramejormovimientoposible movimiento2;
-    movimiento2.fila = -1;
-    movimiento2.columna = -1;
+struct Movimiento encontrarmejormovimiento(char tabladejuego[3][3]){
+    struct Movimiento mejormovimiento
+    mejormovimiento.fila = -1;
+    mejormovimiento.columna = -1;
+    for (int i=0; i <3;i++){
+        for (int j= 0; j<3; j++){
+            if (tabladejuego[i][j] == '_');
+             
+        }
+    }
 
-
+}
