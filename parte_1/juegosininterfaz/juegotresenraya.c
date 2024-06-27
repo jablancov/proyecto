@@ -2,7 +2,7 @@
 /*Desarollado por Carlos Nuñez c25586 y Jorge Blanco*/
 #include <stdbool.h> /*Requerido para el bool*/ 
 #include <stdio.h>  /*REquerido para el print*/
-#include <stdlib.h>  /*Liberrias*/
+#include <stdlib.h>  /*Liberrias para el rand*/
 #include <time.h>  /*Para sacar tiempos*/
 /*Definicion de las macros*/
 #define computadora 1 
@@ -125,3 +125,38 @@ struct Movimiento encontrarmejormovimiento(char tabladejuego[3][3]){
 return mejormovimiento;
 }
 /*Funcion para enseñar la tabla de juego*/
+
+void enseñartabladejuego(char tabladejuego[][lado]){ 
+    printf("\n\n"); 
+    printf("\t\t\t %c | %c | %c \n", tabladejuego[0][0],  /*Imprime la primera fila*/
+           tabladejuego[0][1], tabladejuego[0][2]); 
+    printf("\t\t\t--------------\n"); 
+    printf("\t\t\t %c | %c | %c \n", tabladejuego[1][0], 
+           tabladejuego[1][1], tabladejuego[1][2]); /*Imprime la segundafila*/
+    printf("\t\t\t--------------\n"); 
+    printf("\t\t\t %c | %c | %c \n\n", tabladejuego[2][0], 
+           tabladejuego[2][1], tabladejuego[2][2]); /*Imprime la tercera fila*/
+} 
+
+void enseñarinstrucciones(){
+printf("Bienvenido al juego de tres en raya o tambien conocido como juego del gato. \n");
+printf("Este juego fue desarollado para el proyecto de programacion para el curso de IE0117");
+}
+
+void arrancarjuego(char tabladejuego[][lado];movimiento3[]){
+    for (int columna = 0; columna < lado;movimiento3[]){
+    for (int fila = 0; fila < lado; fila++){
+            tabladejuego[columna][fila] =" "
+    }
+    for (int numero = 0; numero < SIDE * SIDE; i++) 
+        movimiento3[numero] = i; 
+}
+/*PAra randomizar los movimientos*/
+for (int columna = 0; columna < SIDE * SIDE; i++) { 
+        int randIndex = rand() % (SIDE * SIDE); 
+        int temp = moves[i]; 
+        moves[i] = moves[randIndex]; 
+        moves[randIndex] = temp; 
+    } 
+} 
+  
