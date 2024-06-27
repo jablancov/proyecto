@@ -103,7 +103,7 @@ else{
 }    
 }
 struct Movimiento encontrarMovimiento(char board[3][3]) {
-    struct Movimiento mejormovimiento
+    struct Movimiento mejormovimiento;
     mejormovimiento.fila = -1;
     mejormovimiento.columna = -1;
     for (int i=0; i <3;i++){
@@ -215,7 +215,7 @@ void playTicTacToe(int turno)
             y = estemovimiento.columna; 
   
             tabladejuego[x][y] = movimientocpu; 
-            p}intf("La computadora ha puesto  %c en la celda %d %d\n", 
+            printf("La computadora ha puesto  %c en la celda %d %d\n", 
                    movimientocpu, x, y); 
             showBoard(board); 
             moveIndex++; 
