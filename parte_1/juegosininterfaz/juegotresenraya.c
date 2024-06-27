@@ -55,7 +55,7 @@ int evaluar(char tablallena[3][3]){
 }
 
 /*La siguiente funcion saca las posibilidades que el juego puede tomar*/
-int minimax(char tabladejuego[3][3], int profundidad, bool maximacantidadposibilidades){
+int posibilidades(char tabladejuego[3][3], int profundidad, bool maximacantidadposibilidades){
 int resultado = evaluar(tabladejuego); /*Saca el valor del resultado si jugador gana o el oponente gana*/
     if (resultado == 1){
         return resultado;
@@ -68,11 +68,43 @@ int resultado = evaluar(tabladejuego); /*Saca el valor del resultado si jugador 
         return 0;
     }
     if (maximacantidadposibilidades){
-        int maxima = 100;
+        int mejoropcion = -100;/*Se escoje este numero ya que no va a causar ningun conflicto.*/
         //Moverse por todas las celdas de la matriz//
-        for (int celda = 0; celda <3;celda++){
-
+        for (int columna = 0; columna <3;columna++){
+            for (int fila =0; fila < 3; fila++)
+            if (tabladejuego[columna][fila]="_"){
+                tabladejuego[columna][fila]= Jugador;
+                int valor = posibilidades(tabladejuego,profundidad+1,maximacantidadposibilidades);
+                if (valor < mejoropcion){
+                    mejoropcion = valor;
+                }                
+                //*Desacer el movimiento//
+                tabladejuego[columna][fila] = "_";
+            }
         }
+         return mejoropcion;
     }
-    
+else{
+     int mejoropcion = -100;
+      for (int columna = 0; columna <3;columna++){
+            for (int fila =0; fila < 3; fila++)
+            if (tabladejuego[columna][fila]="_"){
+                tabladejuego[columna][fila]= Oponente;
+                /*Llamar de forma recursiva*/
+                int valor = posibilidades(tabladejuego,profundidad+1,!maximacantidadposibilidades);
+                if (valor < mejoropcion){
+                    mejoropcion = valor;
+                }                
+                //*Desacer el movimiento//
+                tabladejuego[columna][fila] = "_";
+            }
+        }
+         return mejoropcion;
+}    
 }
+struct encontrarmejormovimientoparajugador(char tabladejuego[3][3]);
+    struct encontramejormovimientoposible movimiento2;
+    movimiento2.fila = -1;
+    movimiento2.columna = -1;
+
+
