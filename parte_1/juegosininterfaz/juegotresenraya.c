@@ -91,7 +91,7 @@ int verificar(char checkearganador)
 void Jugartictactoe()
 {
     int resultadodeljuego = 0;
-    int celda = 0;
+    int celda = 1;
     int usosdeljuego = 0;
     int cambiosenelresultado = 1;
     char Simbolo_jugador = ' ';
@@ -114,7 +114,7 @@ void Jugartictactoe()
             if (cambiosenelresultado)
             {
                 resultadodeljuego = verificar(Simbolo_jugador);
-                if (resultadodeljuego)
+                if (resultadodeljuego==1)
                 {
                     printf("\t *** El Jugador %d Ha ganado el juego. ***\n", Simbolo_jugador == 'X' ? 1 : 2);
                 }
@@ -132,7 +132,7 @@ void Jugartictactoe()
         }
     }
  
-    if (!resultadodeljuego && usosdeljuego == 9)
+    if (resultadodeljuego && usosdeljuego == 9)
     {
         printf("\n\t El resultado del juego es un empate.\n");
     }
