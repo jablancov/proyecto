@@ -1,4 +1,4 @@
-e// STRUCTS
+// STRUCTS
 
 /* Struct para definir una region de interes para visualizar en la grafica
 Funciona tambien para guardar los intervalos*/
