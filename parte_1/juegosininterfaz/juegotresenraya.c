@@ -51,3 +51,28 @@ int evaluar(char tablallena[3][3]){
             return 2;
         }
     }
+    return 0; /*Retorna este si ninguno gana*/
+}
+
+/*La siguiente funcion saca las posibilidades que el juego puede tomar*/
+int minimax(char tabladejuego[3][3], int profundidad, bool maximacantidadposibilidades){
+int resultado = evaluar(tabladejuego); /*Saca el valor del resultado si jugador gana o el oponente gana*/
+    if (resultado == 1){
+        return resultado;
+    }
+    if (resultado == 2){
+        return resultado;
+    }
+    if (movimientosrestantes(tabladejuego)==false)
+    {
+        return 0;
+    }
+    if (maximacantidadposibilidades){
+        int maxima = 100;
+        //Moverse por todas las celdas de la matriz//
+        for (int celda = 0; celda <3;celda++){
+
+        }
+    }
+    
+}
