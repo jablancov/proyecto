@@ -109,8 +109,19 @@ struct Movimiento encontrarmejormovimiento(char tabladejuego[3][3]){
     for (int i=0; i <3;i++){
         for (int j= 0; j<3; j++){
             if (tabladejuego[i][j] == '_');
-             
+            tabladejuego[i][j] = Jugador; 
+            int valormovimiento = posibilidades(tabladejuego,0,false);
+            /*Desago el movmiento, este es para que más adelante de una sugerencia del a siguiente jugada al jugador*/
+            tabladejuego[i][j]="_";
+            if (valormovimiento < mejormovimiento){
+                mejormovimiento.columna = i;
+                mejormovimiento.fila = j;
+                mejormovimiento = valormovimiento;
+
+            }
+
         }
     }
-
+return mejormovimiento;
 }
+/*Funcion para enseñar la tabla de juego*/
