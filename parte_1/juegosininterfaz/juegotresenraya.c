@@ -102,7 +102,8 @@ else{
          return mejoropcion;
 }    
 }
-struct Movimiento encontrarMovimiento(char board[3][3]) {
+struct Movimiento encontrarmejormovimiento(char tabladejuego[3][3])
+{
     struct Movimiento mejormovimiento;
     mejormovimiento.fila = -1;
     mejormovimiento.columna = -1;
@@ -143,18 +144,19 @@ printf("Bienvenido al juego de tres en raya o tambien conocido como juego del ga
 printf("Este juego fue desarollado para el proyecto de programacion para el curso de IE0117");
 }
 
-void arrancarjuego(char tabladejuego[][lado];movimiento3[]){
+void arrancarjuego(char tabladejuego[][lado];int movimiento3[];){
+    srand(time(NULL)); 
     for (int columna = 0; columna < lado;movimiento3[]){
     for (int fila= 0; fila < lado; fila++){
             tabladejuego[columna][fila] =" "
     }
-    for (int numero = 0; numero < lado * lado; i++){
+    for (int numero = 0; numero < lado * lado; numero++){
     movimiento3[numero] = i; 
     }
     }
 /*PAra randomizar los movimientos*/
 for (int columna = 0; columna < lado * lado; columna++) { 
-        int randindex = rand() % (SIDE * SIDE); 
+        int randindex = rand() % (lado * ); 
         int temporal = movimiento3[i]; 
         moves[i] = movimiento3[randIndex]; 
         movimiento3[randIndex] = temporal; 
@@ -172,23 +174,45 @@ for (int columna = 0; columna < lado * lado; columna++) {
     }
   }
 
-int columnascruzadas (char tabladejuego[][lado]){
-    for (int fila = 0;fila < lado,fila++){
-        if (tabladejuego[0][fila] == tabladejuego[1][fila] 
-            && tabladejuego[1][fila] == tabladejuego[2][fila] 
-            && tabladejuego[0][fila] != ' ') 
+int columnascruzadas(char tabladejuego[][lado]) { 
+    for (int i = 0; i < lado; i++) { 
+        if (tabladejuego[0][i] == tabladejuego[1][i] 
+            && tabladejuego[1][i] == tabladejuego[2][i] 
+            && tabladejuego[0][i] != ' ') 
             return 1; 
+    } 
+    return 0; 
+} 
     }
 }
-int gameover(char tabladejuego[][lado]){
-     return (rowCrossed(tabladejuego) || columnCrossed(board) 
-            || diagonalCrossed(tabladejuego)); 
+int rowCrossed(char tabladejuego[][lado]) 
+{ 
+    for (int i = 0; i <lado; i++) { 
+        if (tabladejuego[i][0] == board[i][1] 
+            && tabladejuego[i][1] == tabladejuego[i][2] 
+            && tabladejuego[i][0] != ' ') 
+            return 1; 
+    } 
+    return 0; 
+} 
+int diagonalcruzadas(char tabladejuego[][lado]){
+if ((tabladejuego[0][0] == tabladejuego[1][1] 
+         && tabladejuego[1][1] == tabladejuego[2][2] 
+         && tabladejuego[0][0] != ' ') 
+        || (tabladejuego][2] == tabladejuego[1][1] 
+            && tabladejuego[1][1] == tabladejuego[2][0] 
+            && tabladejuego[0][2] != ' ')) 
+        return 1; 
 }
-void playTicTacToe(int turno) 
+int gameover(char tabladejuego[][lado]){
+     return (filascruzadas(tabladejuego) || columnascruzadas(tabladejuego) 
+            || diagonalcruzadas(tabladejuego)); 
+}
+void Jugarjuegodelgato(int turno) 
 {
     char tabladejuego[lado][lado]; 
     int movimientos[lado * lado]; 
-    initialise(tabladejuego, movimiento);  
+    arrancarjuego(tabladejuego, turno);  
     ensenarinstrucciones(); 
   
     int movimiento4 = 0, x, y; 
@@ -236,30 +260,30 @@ void playTicTacToe(int turno)
                 showBoard(tabladejueego); 
                 ind++; 
                 if (gameOver(tabladejuego)) { 
-                    declareWinner(humano); 
+                    declarar(humano); 
                     return; 
                 } 
                 turno = computadora; 
             } 
             else { 
                 printf("La celda %d actualmente esta ocupada intente nuevamente.\n", 
-                       move); 
+                       movimiento3); 
             } 
         } 
     } 
   
     /*Si hay un empate*/
-    if (!gameOver(tabladejuego) && movimientoIndex == lado * lado) 
+    if (!gameOver(tabladejuego) && movimiento4 == lado * lado) 
         printf("EL juego ha quedado en empate\n"); 
     else { 
-        // Toggling the user to declare the actual winner 
+        /*Verificando que usuario gano en caso de que no haya empate*/
         if (turno == computadora) 
             turno= humano; 
         else if (turno == humano) 
             turno = humano; 
   
-        // Declare the winner 
-        declareWinner(turno); 
+        /*DEcir quien gano*/
+        ganador(turno); 
     } 
 } 
 int main() 
