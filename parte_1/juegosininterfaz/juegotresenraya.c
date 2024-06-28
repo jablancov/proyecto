@@ -156,7 +156,7 @@ int main()
     if (start)
     {
         int selecciondereseteo = 1;
-        // restart the game
+        /*resetear el juego*/
         while (selecciondereseteo)
         {
             Jugartictactoe();
