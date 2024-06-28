@@ -2,4 +2,5 @@
 *.dat
 *.o
 *.gp
-exe
+exe_p2
+parte_1/main_jorge.c

@@ -21,7 +21,7 @@ El programa automaticamente hace un zoom a estas regiones.
 
 int main() {
 
-    const char *instructions_filename = "instrucciones.txt";
+    const char *instructions_filename = "parte_2/instrucciones.txt";
     const char *data_file = "functions_plot.dat";
     const char *script_gp = "plot_script.gp";
     char polt_command[30];

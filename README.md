@@ -5,12 +5,22 @@ Este proyecto está dividido en dos partes
 ## Parte 1
 
 
+### Requerimientos
+
+El usuario debe tener instalado gcc, GTK-3 y glade. Que se puede realizar con los siguientes comandos en terminal
+
+- sudo apt install gcc
+- sudo apt-get install libgtk-3-dev
+- sudo apt-get install glade
 
 ## Parte 2
+
+Realizada por Jorge Blanco
 
 Este programa genera dos funciones cuadráticas a partir del input del usuario:
 
 $$f(x)= ax^2 + bx + c$$
+
 $$g(x)= dx^2 + ex + h$$
 
 Luego, el usuario tambien debe especificar un error porcentual entre ambas funciones E.
