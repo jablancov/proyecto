@@ -13,6 +13,8 @@ El usuario debe tener instalado gcc, GTK-3 y glade. Que se puede realizar con lo
 - sudo apt-get install libgtk-3-dev
 - sudo apt-get install glade
 
+- El programa ocupa del archivos .glade presente en la carpeta parte1.
+
 ## Parte 2
 
 Realizada por Jorge Blanco
