@@ -4,6 +4,7 @@ Este proyecto está dividido en dos partes
 
 ## Parte 1
 
+Consiste en un juego muy basico de "Gato". Simplemente se abre una pequeña pestaña en la que el usuario puede jugar gato y al finalizar muestra un mensaje indicando al ganador.
 
 ### Requerimientos
 
@@ -41,3 +42,10 @@ El usuario debe tener instalado gcc y gnuplot. Que se puede realizar con los sig
 
 - sudo apt install gcc
 - sudo apt install gnuplot
+<<<<<<< HEAD
+=======
+
+## Cómo usar este proyecto.
+
+Simplemente use make all y se van a generar dos ejecutables exe_p1 para ejecutar el juego de la parte 1 y exe_p2 para ejecutar la parte 2 del proyecto.
+>>>>>>> 8eb6392 (Version final del Readme.)
